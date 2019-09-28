@@ -33,7 +33,6 @@ public class Player_control : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
             SceneManager.LoadScene(0);
             Debug.Log("BackMenu");
         }
