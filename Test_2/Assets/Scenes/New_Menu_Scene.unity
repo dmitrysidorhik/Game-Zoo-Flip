@@ -1895,7 +1895,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1118215884}
   - component: {fileID: 1118215885}
-  - component: {fileID: 1118215886}
   m_Layer: 5
   m_Name: LevelMusic
   m_TagString: Untagged
@@ -1974,18 +1973,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1118215886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118215883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96443e6d354e12a4eabf843512aa6897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1148920010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e84b4e50baef82448c33f360de42092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sss: 0
 --- !u!1 &1447745021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,6 +2210,7 @@ MonoBehaviour:
   mySlider: {fileID: 1118215885}
   a: {fileID: 1294067009}
   script: {fileID: 1294067011}
+  objects: []
 --- !u!1 &1467666481
 GameObject:
   m_ObjectHideFlags: 0
