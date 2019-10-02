@@ -15,7 +15,7 @@ public class Music_control : MonoBehaviour
     //static GameObject instance = null;
     public GameObject[] objects;
     static Music_control instance;
-  /* private void Awake()
+   private void Awake()
     {
         if (instance == null)
         {
@@ -44,7 +44,7 @@ public class Music_control : MonoBehaviour
     }    
     void Update()
     {
-        DontDestroyOnLoad(this.gameObject);
+       //// DontDestroyOnLoad(this.gameObject);
         //m_MyAudioSource.volume = m_MySliderValue;
         //Debug.Log(mySlider.value);
         m_MyAudioSource.volume = mySlider.value;
