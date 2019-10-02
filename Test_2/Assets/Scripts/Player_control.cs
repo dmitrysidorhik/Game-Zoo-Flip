@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class Player_control : MonoBehaviour
 {
     public float speed = 10f;
-   // public bool grounded = false;
-   // public Transform groundCheck;
-   // public float groungRadius = 0.2f;
-   // public LayerMask whatIsGround;
+     
+    public bool grounded = false;
+    public Transform groundCheck;
+    public float groungRadius = 0.2f;
+    public LayerMask whatIsGround;
 
     private Rigidbody2D rig;
      void Start()
@@ -19,14 +20,14 @@ public class Player_control : MonoBehaviour
 
      void Update()
     {
-     //   grounded = Physics2D.OverlapCircle(groundCheck.position, groungRadius, whatIsGround);
-        //float move;
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groungRadius, whatIsGround);
+        float move;
 
-        //move = Input.GetAxis("Horizontal");
-        //rig.velocity = new Vector2(move * speed, rig.velocity.y);
+        move = Input.GetAxis("Horizontal");
+        rig.velocity = new Vector2(move * speed, rig.velocity.y);
          
          
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) && grounded) || (Input.touchCount>0 && grounded))
         {
             rig.AddForce(new Vector2(0, 700f));
             Debug.Log("Jump");
