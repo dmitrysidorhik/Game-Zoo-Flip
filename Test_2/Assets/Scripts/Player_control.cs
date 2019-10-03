@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player_control : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class Player_control : MonoBehaviour
     public Transform groundCheck;
     public float groungRadius = 0.2f;
     public LayerMask whatIsGround;
-
+    public float score  = 0;
     private Rigidbody2D rig;
-     void Start()
+
+    public Text moneyText;
+    void Start()
     {
         rig = GetComponent<Rigidbody2D>();
     }
@@ -37,6 +40,16 @@ public class Player_control : MonoBehaviour
             SceneManager.LoadScene(0);
             Debug.Log("BackMenu");
         }
+        moneyText.text = "" + score;
+
     }
-    
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.GetComponent<PolygonCollider2D>().tag == "star")
+        {
+            Destroy(col.gameObject);
+            score++;
+        }
+    }
+
 }
