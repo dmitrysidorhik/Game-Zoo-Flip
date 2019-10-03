@@ -37,7 +37,7 @@ public class Player_control : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             Debug.Log("BackMenu");
         }
         moneyText.text = "" + score;
@@ -50,6 +50,12 @@ public class Player_control : MonoBehaviour
             Destroy(col.gameObject);
             score++;
         }
-    }
+        if (col.GetComponent<PolygonCollider2D>().tag == "dead_saw")
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene(2);
 
+        }
+    }
+    
 }
