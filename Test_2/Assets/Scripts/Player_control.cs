@@ -12,16 +12,22 @@ public class Player_control : MonoBehaviour
     public Transform groundCheck;
     public float groungRadius = 0.2f;
     public LayerMask whatIsGround;
-    public float score  = 0;
+    public int score  = 0;
+    public int max_score = 0;
     private Rigidbody2D rig;
 
     public Text moneyText;
+    public Text max_moneyText;
+
+    public GameObject b;
+    public Script_first_load max_score_script;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        max_score_script = b.GetComponent<Script_first_load>();
     }
 
-     void Update()
+    void Update()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groungRadius, whatIsGround);
         float move;
@@ -41,6 +47,14 @@ public class Player_control : MonoBehaviour
             Debug.Log("BackMenu");
         }
         moneyText.text = "" + score;
+        if (Script_first_load.maxMoney < score)
+        {
+            Script_first_load.maxMoney = score;
+        }
+        
+        max_moneyText.text = "" + Script_first_load.maxMoney;
+        Debug.Log("max_score_script.maxMoney " + Script_first_load.maxMoney);
+
 
     }
     private void OnTriggerEnter2D(Collider2D col)
