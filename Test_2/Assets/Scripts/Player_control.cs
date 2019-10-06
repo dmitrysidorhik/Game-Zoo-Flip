@@ -46,6 +46,7 @@ public class Player_control : MonoBehaviour
             SceneManager.LoadScene(1);
             Debug.Log("BackMenu");
         }
+
         moneyText.text = "" + score;
         if (Script_first_load.maxMoney < score)
         {

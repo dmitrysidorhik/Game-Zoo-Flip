@@ -6,32 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class Music_control : MonoBehaviour
 {
+    public Slider mySlider;
     AudioSource m_MyAudioSource;
     float m_MySliderValue;
     int s = 0;
-    public Slider mySlider;
+    
     public GameObject a;
     public MainMenu script;
     //static GameObject instance = null;
     public GameObject[] objects;
     static Music_control instance;
-   private void Awake()
+
+    public GameObject m;
+    public Script_first_load level_control_music;
+    private void Awake()
     {
         if (instance == null)
         {
             for (int i = 0; i < objects.Length; i++)
-                DontDestroyOnLoad(objects[i]);
-            Debug.Log("IF");
+                DontDestroyOnLoad(objects[i]);             
             DontDestroyOnLoad(gameObject);
             instance = this;
         }
         else
         {
             for (int i = 0; i < objects.Length; i++)
-                Destroy(objects[i]);
-            
+                Destroy(objects[i]);            
             Destroy(gameObject);
-            Debug.Log("ELSE");
         }
     } 
     void Start()
@@ -41,17 +42,16 @@ public class Music_control : MonoBehaviour
         m_MyAudioSource = GetComponent<AudioSource>();
         m_MyAudioSource.Play();
 
+        level_control_music = m.GetComponent<Script_first_load>();
+
     }    
     void Update()
     {
-       //// DontDestroyOnLoad(this.gameObject);
+        ////DontDestroyOnLoad(this.gameObject);
         //m_MyAudioSource.volume = m_MySliderValue;
         //Debug.Log(mySlider.value);
-        m_MyAudioSource.volume = mySlider.value;
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Destroy(this.gameObject);
-            Debug.Log("Del");
-        }
+        //m_MyAudioSource.volume = mySlider.value;
+        Script_first_load.levelMusic = mySlider.value;      
+        Debug.Log("levelMusic " + Script_first_load.levelMusic);
     }    
 }
