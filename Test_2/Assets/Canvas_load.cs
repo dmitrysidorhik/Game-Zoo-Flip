@@ -7,23 +7,24 @@ public class Canvas_load : MonoBehaviour
 {
     public GameObject can;
     static Canvas_load instance;
-    public GameObject[] objects;
+    public GameObject objects;
     public Script_first_load check_Scene;
     public GameObject dr;
     void Awake()
     {
+        
         if (instance == null)
         {
-            for (int i = 0; i < objects.Length; i++)
-                DontDestroyOnLoad(objects[i]);
+            //for (int i = 0; i < objects.Length; i++)
+              //  DontDestroyOnLoad(objects);
             DontDestroyOnLoad(gameObject);
             instance = this;
         }
         else
         {
-            for (int i = 0; i < objects.Length; i++)
-                Destroy(objects[i]);
-            Destroy(gameObject);
+            //for (int i = 0; i < objects.Length; i++)
+                Destroy(objects);
+           // Destroy(gameObject);
         }
     }
     private void Start()
