@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Scene_Save_GO.unity
+- path: Assets/Scenes/New_Menu_Scene.unity
   isLoaded: 1
   isActive: 1

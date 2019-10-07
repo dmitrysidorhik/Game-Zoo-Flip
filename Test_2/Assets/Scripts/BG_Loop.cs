@@ -13,8 +13,6 @@ public class BG_Loop : MonoBehaviour
         material = GetComponent<Renderer>().material;
         offset = material.GetTextureOffset("_MainTex");
     }
-
-    // Update is called once per frame
     void Update()
     {
         offset.x += speed_back * Time.deltaTime;

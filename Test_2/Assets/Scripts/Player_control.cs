@@ -51,11 +51,9 @@ public class Player_control : MonoBehaviour
         if (Script_first_load.maxMoney < score)
         {
             Script_first_load.maxMoney = score;
-        }
-        
+        }        
         max_moneyText.text = "" + Script_first_load.maxMoney;
         Debug.Log("max_score_script.maxMoney " + Script_first_load.maxMoney);
-
 
     }
     private void OnTriggerEnter2D(Collider2D col)
@@ -69,7 +67,6 @@ public class Player_control : MonoBehaviour
         {
             Destroy(gameObject);
             SceneManager.LoadScene(2);
-
         }
     }
     

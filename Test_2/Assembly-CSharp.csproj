@@ -60,11 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\audoi_control_script.cs" />
-    <Compile Include="Assets\Canvas_load.cs" />
-    <Compile Include="Assets\Check_Scene.cs" />
+    <Compile Include="Assets\Scripts\audoi_control_script.cs" />
     <Compile Include="Assets\Scripts\BG.cs" />
     <Compile Include="Assets\Scripts\BG_Loop.cs" />
+    <Compile Include="Assets\Scripts\Canvas_load.cs" />
+    <Compile Include="Assets\Scripts\Check_Scene.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Music_control.cs" />
     <Compile Include="Assets\Scripts\Player_control.cs" />
