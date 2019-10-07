@@ -6,15 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Music_control : MonoBehaviour
 {
-    public Slider mySlider;
-    AudioSource m_MyAudioSource;
-    float m_MySliderValue;
-    int s = 0;    
-    public GameObject a;
-    public MainMenu script;
+    public Slider mySlider_music;
+    public AudioSource m_MyAudioSource;
     public GameObject[] objects;
     static Music_control instance;
-    public GameObject m;
     public Script_first_load level_control_music;
     private void Awake()
     {
@@ -34,15 +29,13 @@ public class Music_control : MonoBehaviour
     } 
     void Start()
     {
-        script = a.GetComponent<MainMenu>();
         m_MyAudioSource = GetComponent<AudioSource>();
         m_MyAudioSource.Play();
-        level_control_music = m.GetComponent<Script_first_load>();
     }    
     void Update()
     {        
-        m_MyAudioSource.volume = mySlider.value;
-        Script_first_load.levelMusic = mySlider.value;      
+        m_MyAudioSource.volume = mySlider_music.value;
+        Script_first_load.levelMusic = mySlider_music.value;      
         Debug.Log("levelMusic " + Script_first_load.levelMusic);
     }    
 }

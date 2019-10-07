@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Check_Scene : MonoBehaviour
 {
-    public int fort;
     Scene scene;
     public Script_first_load check;
     public GameObject q;
@@ -22,17 +21,12 @@ public class Check_Scene : MonoBehaviour
     {
         if (scene.name == "New_Menu_Scene")
         {
-            Script_first_load.check_num_scene = 1;
-            fort = 1;
-            Debug.Log("fort " + fort);
+            Script_first_load.check_num_scene = 1;            
          }
         if (scene.name == "Game_Scene")
         {
-            Script_first_load.check_num_scene = 2;
-            fort = 2;
-            Debug.Log("fort " + fort);
-
+            Script_first_load.check_num_scene = 2;     
         }
-        Debug.Log("Script_first_load.check_num_scene  " + Script_first_load.check_num_scene);
+        Debug.Log("scene  " + Script_first_load.check_num_scene);
     }
 }

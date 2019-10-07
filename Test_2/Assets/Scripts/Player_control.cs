@@ -53,7 +53,6 @@ public class Player_control : MonoBehaviour
             Script_first_load.maxMoney = score;
         }        
         max_moneyText.text = "" + Script_first_load.maxMoney;
-        Debug.Log("max_score_script.maxMoney " + Script_first_load.maxMoney);
 
     }
     private void OnTriggerEnter2D(Collider2D col)

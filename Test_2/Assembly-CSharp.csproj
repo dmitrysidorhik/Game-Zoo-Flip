@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\audoi_control_script.cs" />
     <Compile Include="Assets\Scripts\BG.cs" />
     <Compile Include="Assets\Scripts\BG_Loop.cs" />
     <Compile Include="Assets\Scripts\Canvas_load.cs" />
@@ -69,6 +68,7 @@
     <Compile Include="Assets\Scripts\Music_control.cs" />
     <Compile Include="Assets\Scripts\Player_control.cs" />
     <Compile Include="Assets\Scripts\Script_first_load.cs" />
+    <Compile Include="Assets\Scripts\Sounds_control.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

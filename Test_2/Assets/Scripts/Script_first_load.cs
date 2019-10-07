@@ -8,7 +8,7 @@ public class Script_first_load : MonoBehaviour
     public static int maxMoney;
     public static float levelMusic;
     public static int check_num_scene;
-    public Player_control script;
+    public static float levelSounds;
     void Start()
     {     
         SceneManager.LoadScene(1);
