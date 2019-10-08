@@ -21,10 +21,19 @@ public class Player_control : MonoBehaviour
 
     public GameObject b;
     public Script_first_load max_score_script;
+
+    public AudioSource m_MyAudioSource_Jump;
+    public AudioSource m_MyAudioSource_Dead;
+    public AudioSource m_MyAudioSource_Star;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         max_score_script = b.GetComponent<Script_first_load>();
+
+        m_MyAudioSource_Jump.GetComponent<AudioSource>();
+        m_MyAudioSource_Dead.GetComponent<AudioSource>();
+        m_MyAudioSource_Star.GetComponent<AudioSource>();
+
     }
 
     void Update()
@@ -38,6 +47,7 @@ public class Player_control : MonoBehaviour
          
         if ((Input.GetKeyDown(KeyCode.UpArrow) && grounded) || (Input.touchCount>0 && grounded))
         {
+            m_MyAudioSource_Jump.Play();
             rig.AddForce(new Vector2(0, 700f));
             Debug.Log("Jump");
         }
@@ -59,11 +69,13 @@ public class Player_control : MonoBehaviour
     {
         if (col.GetComponent<PolygonCollider2D>().tag == "star")
         {
+            m_MyAudioSource_Star.Play();
             Destroy(col.gameObject);
             score++;
         }
         if (col.GetComponent<PolygonCollider2D>().tag == "dead_saw")
         {
+            m_MyAudioSource_Dead.Play();
             Destroy(gameObject);
             SceneManager.LoadScene(2);
         }
