@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BG.cs" />
     <Compile Include="Assets\Scripts\BG_Loop.cs" />
+    <Compile Include="Assets\Scripts\Button_Game.cs" />
     <Compile Include="Assets\Scripts\Canvas_load.cs" />
     <Compile Include="Assets\Scripts\Check_Scene.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
