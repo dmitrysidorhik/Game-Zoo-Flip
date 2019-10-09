@@ -45,7 +45,7 @@ public class Player_control : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         max_score_script = b.GetComponent<Script_first_load>();
 
-        er = d.GetComponent<Sounds_control>();
+        //er = d.GetComponent<Sounds_control>();
       
 
         //fon = fon.GetComponent<SpriteRenderer>();
@@ -62,8 +62,8 @@ public class Player_control : MonoBehaviour
          
         if ((Input.GetKeyDown(KeyCode.UpArrow) && grounded) || (Input.touchCount>0 && grounded))
         {
-            //m_MyAudioSource_Jump.Play();
-            er.Jump_Play();
+            m_MyAudioSource_Jump.Play();
+            //er.Jump_Play();
             rig.AddForce(new Vector2(0, 700f));
             Debug.Log("Jump");
         }

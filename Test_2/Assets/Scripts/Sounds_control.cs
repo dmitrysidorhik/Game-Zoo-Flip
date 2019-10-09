@@ -28,7 +28,7 @@ public class Sounds_control : MonoBehaviour
     void Start()
     {
         //m_MyAudioSource = GetComponent<AudioSource>();
-        Jump_Play();
+        //Jump_Play();
     }
 
     void Update()
