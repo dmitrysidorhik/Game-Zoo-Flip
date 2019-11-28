@@ -9,7 +9,9 @@ public class Player_control : MonoBehaviour
     public float speed = 10f;
      
     public bool grounded = false;
+    public bool jumpgrounded = false;
     public Transform groundCheck;
+    public Transform jumptogroundCheck;
     public float groungRadius = 0.2f;
     public LayerMask whatIsGround;
     public int score  = 0;
@@ -44,22 +46,27 @@ public class Player_control : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         max_score_script = b.GetComponent<Script_first_load>();
-
-        //er = d.GetComponent<Sounds_control>();
-      
-
+        //er = d.GetComponent<Sounds_control>();    
         //fon = fon.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groungRadius, whatIsGround);
+        jumpgrounded = Physics2D.OverlapCircle(jumptogroundCheck.position, groungRadius, whatIsGround);
         float move;
 
         move = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(move * speed, rig.velocity.y);
-         
-         
+        if (jumpgrounded==true)
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+        if (jumpgrounded == false)
+        {
+            GetComponent<BoxCollider2D>().enabled = true;
+        }
+
         if ((Input.GetKeyDown(KeyCode.UpArrow) && grounded) || (Input.touchCount>0 && grounded))
         {
             m_MyAudioSource_Jump.Play();
@@ -96,7 +103,13 @@ public class Player_control : MonoBehaviour
             Destroy(gameObject);
             Dead_Player();
         }
+        if (col.GetComponent<PolygonCollider2D>().tag == "ground")
+        {
+            Debug.Log("1q11");
+        
+        }
     }
+    
     private void Dead_Player()
     {
         fon.enabled = true;
